@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+</head>
+<body>
+  <header id="header">
+    <div class="container-gutter escape">
+      <a id="logo" href="/">Rebar</a>
+      <nav id="header-nav">
+        <a class="header-link {% if page.title == 'Guide' %}active{% endif %}" href="/guide.html">Guide</a>
+        <a class="header-link {% if page.title == 'Settings' %}active{% endif %}" href="/settings.html">Settings</a>
+        <a class="header-link" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B24HK9EGUHMHC" target="_blank">Donate</a>
+        <a class="header-link" href="https://github.com/P233/Rebar" target="_blank">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  {{ content }}
+
+  <footer id="footer">
+    <div class="container-gutter escape">
+      <span>Released under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</span> <span>Copyright &copy; 2015 <a href="http://peiwen.lu" target="_blank">Peiwen Lu</a></span>
+    </div>
+  </footer>
+</body>
+</html>

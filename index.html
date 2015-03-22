@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<div id="hero">
+  <h1 id="hero-title">Rebar Grid Framework</h1>
+  <p id="hero-intro">Rebar is a <a href="http://sass-lang.com/" target="_blank">Sass</a> / <a href="http://learnboost.github.io/stylus/" target="_blank">Stylus</a> grid framework and makes responsive development more efficient and keep CSS organised.</p>
+  <a id="hero-download" href="https://github.com/P233/Rebar/releases/tag/v1.0.0" target="_blank"></a>
+  <div id="hero-social">
+    <iframe src="https://ghbtns.com/github-btn.html?user=P233&repo=Rebar&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://rebar.io">Tweet</a>
+  </div>
+</div>
+
+<div class="content">
+<h2>Getting Started</h2>
+
+<p>Rebar is aimed to make responsive development more efficient and keep CSS organised. The idea is to setup a list of breakpoints and assign container or grid settings for each breakpoint at one time. It use <code>padding</code> for gutter, works the same way as Bootstrap 3 grid system does. So if you already familiar with Bootstrap, you will find Rebar is easy to use and far more flexible.</p>
+
+<p>Rebar requires Sass 3.4 or Stylus and is incompatible with Libsass 3.1.</p>
+
+<p>To start using Rebar, save container and grid settings in <code>$container</code> and <code>$grid</code> Sass maps or Stylus hashes, and then <code>@import "rebar"</code> after them. Rebar will generate the grid CSS code for you. For example: </p>
+
+<h4>Sass maps</h4>
+{% highlight scss %}
+// Default settings
+// $mobile-first: true
+// $max-width:    1170px
+// $breakpoints:  481px 769px 993px
+// $gutters:      20px 20px 26px 30px
+
+$container: (
+  ".container": ()
+);
+$grid: (
+  ".third": (
+    width: 1 1/2 null 1/3
+  )
+);
+
+@import "rebar";
+{% endhighlight %}
+
+<h4>Stylus hashes</h4>
+{% highlight js %}
+// Default settings
+// $mobile-first: true
+// $max-width:    1170px
+// $breakpoints:  481px 769px 993px
+// $gutters:      20px 20px 26px 30px
+
+$container = {
+  ".container": {}
+};
+$grid = {
+  ".third": {
+    width: 1 1/2 null 1/3
+  }
+};
+
+@import "rebar";
+{% endhighlight %}
+
+<br>
+<p>you will get:</p>
+</div>
+<!-- end .content -->
+
+<div id="index-example">
+  <div class="container">
+    <div>
+      <div class="third">
+        <div></div>
+      </div>
+      <div class="third">
+        <div></div>
+      </div>
+      <div class="third">
+        <div></div>
+      </div>
+      <div class="third">
+        <div></div>
+      </div>
+      <div class="third">
+        <div></div>
+      </div>
+      <div class="third">
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <p>Please read the <a href="guide.html">Guide</a> to learn more about Rebar, or read the <a href="settings.html">Settings</a> to check out all available settings.</p>
+</div>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

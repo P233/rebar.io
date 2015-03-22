@@ -1,0 +1,52 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$version: '1.0.0';
+
+// font
+$text-font: 'Open Sans', sans-serif;
+$code-font: 'Droid Sans Mono', monospace;
+
+// header
+$header-fg: #F7F5EC;
+$header-bg: #da6351;
+$header-height: 64px;
+
+// content
+$content-fg: #64535B;
+$content-bg: #FDFCF7;
+
+$code-fg: #7D8992;
+$code-bg: darken($content-bg, 2%);
+
+$link-fg: lighten($content-fg, 15%);
+
+$hr-bg: darken($content-bg, 15%);
+
+// example
+$container-bg: darken($content-bg, 10%);
+$container-padding-bg: lighten($container-bg, 5%);
+$container-class-color: $content-fg;
+
+$grid-bg: #9FCFC0;
+$grid-padding-bg: lighten($grid-bg, 5%);
+$grid-class-color: $header-fg;
+
+$example-bg: $code-bg;
+$example-padding: 40px;
+$grid-height: 80px;
+
+
+// footer
+$footor-bg: #eee;
+
+
+@import
+        "base",
+        "grids",
+        "content",
+        "mobile",
+        "syntax-highlighting"
+;

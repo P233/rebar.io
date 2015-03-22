@@ -1,0 +1,8 @@
+# Site settings
+title: Rebar Grid Framework
+description: Rebar is a Sass / Stylus grid framework and makes responsive development more efficient and keep CSS organised.
+baseurl: ""
+url: "http://rebar.io"
+
+# Build settings
+markdown: kramdown

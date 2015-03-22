@@ -1,0 +1,225 @@
+// HEADER
+#header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 100
+  height: $header-height
+  color: $header-fg
+  background: $header-bg
+
+#logo
+  float: left
+  margin: 16px 0
+  font-size: 26px
+  line-height: 32px
+#header-nav
+  float: right
+.header-link
+  position: relative
+  float: left
+  margin: 16px 0 16px 30px
+  font-size: 18px
+  line-height: 32px
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 2px
+    background: transparentize($header-fg, .5)
+    -webkit-transform: scaleX(0)
+    transform: scaleX(0)
+    -webkit-transition: -webkit-transform .35s ease
+    transition: transform .35s ease
+  &:hover:after, &.active:after
+    -webkit-transform: -webkit-scaleX(1)
+    transform: scaleX(1)
+
+
+// HERO
+#hero
+  margin-bottom: 1em
+  padding: 5.5em 10px 3em
+  text-align: center
+  background: darken($content-bg, 7%)
+  &-title
+    font-size: 2.75em
+    line-height: 1.25
+    margin-bottom: 20px
+  &-intro
+    max-width: 640px
+    margin: 0 auto 3.5em
+    > a
+      color: $link-fg
+  &-download
+    position: relative
+    padding: 5px 20px
+    word-spacing: 5px
+    border: 2px solid $grid-bg
+    border-radius: 26px
+    -webkit-transition: color .25s ease
+    transition: color .25s ease
+    &:before
+      content: ''
+      position: absolute
+      top: -2px
+      left: -2px
+      right: -2px
+      bottom: -2px
+      z-index: 0
+      background: $grid-bg
+      border-radius: inherit
+      -webkit-transform: scaleX(0)
+      transform: scaleX(0)
+      -webkit-transition: -webkit-transform .35s ease
+      transition: transform .35s ease
+    &:after
+      content: 'Download v#{$version}'
+      position: relative
+      z-index: 1
+    &:hover
+      color: $header-fg
+      &:before
+        -webkit-transform: -webkit-scaleX(1)
+        transform: scaleX(1)
+  &-social
+    padding-top: 40px
+
+
+// CONTENT
+.content
+  max-width: 790px
+  margin: 0 auto
+  padding: 3em 10px 0
+  text-shadow: 1px 1px 0 #fff
+  > h2
+    font-size: 1.8em
+    margin-bottom: .5em
+    + h3
+      margin-top: 1.5em
+  > h3
+    font-size: 1.35em
+    margin: 3em 0 .5em
+  > h4
+    margin: 3em 0 .5em
+  p
+    margin-bottom: 1.5em
+    word-spacing: 1px
+  a
+    color: $link-fg
+
+.highlight + .highlight
+  margin-top: 1.5em
+pre
+  padding: 1em
+  background: $code-bg
+  overflow: auto
+code
+  font: .9em/1 $code-font
+  color: $code-fg
+
+p > code
+  padding: 0 .25em
+  background: $code-bg
+
+hr
+  margin: 4em 0 0
+  height: 1px
+  background: $hr-bg
+  border: none
+  + h2
+    margin-top: 2em
+
+// examples
+%class-attr
+  content: 'class="' attr(class) '"'
+  position: absolute
+  left: 0
+  z-index: 1
+  font: 16px/1 $code-font
+  text-shadow: none
+
+.example-outer
+  height: $example-padding * 2 + $grid-height
+  margin-top: 1.5em
+  &.padding
+    height: $example-padding * 2 + $grid-height + 40px
+  + h4:before
+    content: "• • •"
+    display: block
+    margin-bottom: 2em
+    text-align: center
+    color: $code-fg
+
+.example
+  position: absolute
+  top: auto
+  left: 0
+  right: 0
+  z-index: 1
+  height: inherit
+  background: $example-bg
+
+
+[class^="container"]:not(.container-nested):not(.escape)
+  position: relative
+  margin-top: $example-padding
+  background: $container-padding-bg
+  &:before
+    @extend %class-attr
+    top: -1em
+    color: $container-class-color
+  > div
+    min-height: $grid-height
+    background: $container-bg
+
+.container-gutter
+  > .padding
+    padding: 20px 0
+
+.container-nested
+  position: relative
+  &:before
+    @extend %class-attr
+    top: 0
+    color: $grid-class-color
+  > div
+    height: $grid-height
+    background: $grid-bg
+
+[class^="grid"], .third
+  position: relative
+  background: $grid-padding-bg
+  &:before
+    @extend %class-attr
+    top: 0
+    color: $grid-class-color
+  > div
+    height: $grid-height
+    background: $grid-bg
+
+#index-example
+  padding: 3em 0 2em
+  background: $example-bg
+  > .container
+    margin-top: 0
+    > div
+      padding-top: 20px
+      overflow: hidden
+.third
+  margin-bottom: 20px
+
+
+// FOOTER
+#footer
+  position: relative
+  z-index: 110
+  margin-top: 100px
+  padding-top: 1em
+  padding-bottom: 1em
+  font-size: 16px
+  text-align: center
+  background: $example-bg
